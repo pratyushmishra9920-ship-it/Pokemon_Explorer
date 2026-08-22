@@ -39,7 +39,7 @@ https://pokemon-explorer-ysso.onrender.com
 
 ## Project Structure
 
-\`\`\`text
+```text
 Pokemon_Explorer/
 │
 ├── application/
@@ -57,7 +57,7 @@ Pokemon_Explorer/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-\`\`\`
+```
 
 ## How It Works
 
@@ -74,42 +74,42 @@ Pokemon_Explorer/
 
 1. Clone the repository
 
-   \`\`\`
+   ```
    git clone <repository-url>
    cd Pokemon_Explorer
-   \`\`\`
+   ```
 
 2. Create a virtual environment
 
-   \`\`\`
+   ```
    python -m venv .venv
-   \`\`\`
+   ```
 
 3. Activate the virtual environment
 
    For Windows:
 
-   \`\`\`
+   ```
    .venv\Scripts\activate
-   \`\`\`
+   ```
 
    For macOS/Linux:
 
-   \`\`\`
+   ```
    source .venv/bin/activate
-   \`\`\`
+   ```
 
 4. Install dependencies
 
-   \`\`\`
+   ```
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 5. Run the application
 
-   \`\`\`
+   ```
    python -m main
-   \`\`\`
+   ```
 
    The application will start on the local Flask development server.
 
@@ -127,23 +127,23 @@ The application is deployed as a production web service using Gunicorn and Rende
 6. The `main` branch was selected for deployment.
 7. The build command was configured as:
 
-   \`\`\`
+   ```
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 8. The production start command was configured as:
 
-   \`\`\`
+   ```
    gunicorn application:app
-   \`\`\`
+   ```
 
 9. Render automatically builds and deploys the application whenever changes are pushed to the connected GitHub repository.
 
 ### Gunicorn Command
 
-\`\`\`
+```
 gunicorn application:app
-\`\`\`
+```
 
 Here:
 
