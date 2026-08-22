@@ -41,6 +41,8 @@ def info():
     found_type = None
     found_ability = None
     found_move = None
+    found_base = []
+    found_stat_name = []
 
     if data["name"] == charname:
         found_name = data["name"]
@@ -53,15 +55,24 @@ def info():
     for key in data["moves"]:
         if key["move"]["name"] == move:
             found_move = key["move"]["name"]
+    for key in data["stats"]: 
+        found_base.append(key["base_stat"])
+        found_stat_name.append(key["stat"]["name"])
 
     if found_name and found_type and found_ability and found_move:
         result = {
                 "success": True,
                 "Data": {
+                        "Id": data["id"],
                         "Name": found_name,
+                        "Height": data["height"],
+                        "Weight": data["weight"],
+                        "Base Experience": data["base_experience"],
                         "Type": found_type,
                         "Ability": found_ability,
                         "Move": found_move
+                        "Stats Name": found_stat_name,
+                        "Base Stat": found_base
                     }
                 }
         return render_template(
