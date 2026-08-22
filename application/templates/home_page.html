@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home page
+{% endblock %}
+
+{% block content %}
+
+    <style>
+
+        .home-page {
+            text-align: center;
+            padding: 40px 60px;
+        }
+
+        .home-page h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .pokemon-main-image {
+            width: 700px;
+            max-width: 90%;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .about-section {
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .about-section h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .about-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .about-section ul {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .explore-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #212529;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .explore-button:hover {
+            background-color: #343a40;
+        }
+
+        .explore-button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
+
+
+    <div class="home-page">
+
+        <h1 class="main-heading-h1">Welcome to Pokemon Explorer</h1>
+
+        <img class="pokemon-main-image"
+            src="{{ url_for('static', filename='pokemon_main.png') }}"
+            alt="Pokemon Family"
+        >
+
+
+        <div class="about-section">
+
+            <h2>About Pokemon Explorer</h2>
+
+            <p>
+                Pokemon Explorer is a Flask-based web application that allows
+                users to explore information about different Pokemon characters.
+                The application takes user input and uses an API to retrieve
+                relevant Pokemon information.
+            </p>
+
+
+            <h3>What does this API do?</h3>
+
+            <p>
+                This API acts as a bridge between the user and the Pokemon data.
+                When a user searches for a Pokemon, the application sends the
+                required information to the API and processes the response.
+                The retrieved data is then displayed in a simple and readable
+                format on the website.
+            </p>
+
+
+            <h3>What information can you explore?</h3>
+
+            <p>
+                Pokemon Explorer allows you to search and explore important
+                characteristics of a Pokemon, including:
+            </p>
+
+            <ul>
+                <li>Pokemon Name</li>
+                <li>Pokemon Type</li>
+                <li>Pokemon Ability</li>
+                <li>Pokemon Move</li>
+            </ul>
+
+
+            <h3>How does it work?</h3>
+
+            <p>
+                Simply go to the
+                <strong>Pokemon Character's</strong>
+                page and enter the information you want to search for.
+                After submitting the form, the Flask application processes
+                the request, communicates with the API, and displays the
+                resulting Pokemon information.
+            </p>
+
+
+            <h3>Built With</h3>
+
+            <ul>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>REST API</li>
+                <li>JSON</li>
+            </ul>
+
+
+            <h3>Explore Pokemon</h3>
+
+            <p>
+                Ready to explore? Visit the Pokemon Character's page and
+                search for a Pokemon to discover its characteristics.
+            </p>
+
+
+            <div class="explore-button-container">
+                <a href="/character" class="explore-button">
+                    Explore Pokemon
+                </a>
+            </div>
+        
+        </div>
+
+    </div>
+
+{% endblock %}

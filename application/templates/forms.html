@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Character's 
+{% endblock %}\
+
+{% block content %}
+
+    <style>
+        .pokemon-page {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .left-section {
+            width: 55%;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        /* Main heading */
+        .left-section h1 {
+            font-size: 48px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        /* Form */
+        .left-section form {
+            width: 400px;
+        }
+
+        /* Labels */
+        .left-section label {
+            display: block;
+            text-align: left;
+            margin-top: 20px;
+            margin-bottom: 6px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        /* Input boxes */
+        .left-section input {
+            width: 300px;
+            height: 42px;
+            padding: 8px 12px;
+            box-sizing: border-box;
+            border: 1px solid #adb5bd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        /* Input focus */
+        .left-section input:focus {
+            outline: none;
+            border: 2px solid #6c757d;
+        }
+
+        /* Search button */
+        .left-section button {
+            display: block;
+            margin: 25px 0 0 85px;
+            padding: 11px 32px;
+            font-size: 18px;
+            background-color: #212529;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Search button hover */
+        .left-section button:hover {
+            background-color: #343a40;
+        }
+
+        /* Placeholder */
+        .left-section input::placeholder {
+            color: #6c757d;
+        }
+
+        /* Result */
+        .result {
+            margin-top: 50px;
+            text-align: left;
+            width: 600px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .result h2 {
+            font-size: 42px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .result pre {
+            background-color: #212529;
+            padding: 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        /* Right side image */
+        .right-section {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .right-section img {
+            width: 450px;
+            max-width: 100%;
+        }
+    </style>
+
+    <div class="pokemon-page">
+
+             <!-- LEFT SIDE -->
+
+            <div class="left-section">
+
+                <h1>Pokemon Explorer</h1>
+
+                <form action="/character" method="POST">
+
+                    <label>Pokemon Name:</label>
+                    <input type="text" name="charname" placeholder="e.g. pikachu">
+
+                    <label>Type:</label>
+                    <input type="text" name="type" placeholder="e.g. electric">
+
+                    <label>Ability:</label>
+                    <input type="text" name="ability" placeholder="e.g. static">
+
+                    <label>Move:</label>
+                    <input type="text" name="move" placeholder="e.g. thunderbolt">
+
+                    <button type="submit">Search</button>
+
+                </form>
+                
+                {% if result %}
+
+                    <div class="result">
+                        <h2>Result</h2>
+                        <pre>{{ result }}</pre>
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="right-section">
+                <img src="{{ url_for('static', filename='pokemon.jpg') }}"  alt="Pokemon">
+            </div>
+
+    </div>
+
+{% endblock %}
