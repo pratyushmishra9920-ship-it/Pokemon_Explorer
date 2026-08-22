@@ -22,18 +22,28 @@ def info():
     error = validate_input(charname, type, ability, move)
         
     if error:
-        return jsonify({
-                "success": False,
-                "error": error
-            }), 400
+        result = {
+                    "success": False,
+                    "error": error,
+                    "status": 404
+                }
+        return render_template(
+            "forms.html",
+            result = json.dumps(result, indent=4)
+        )
     
     try: 
         data = get_character(charname)
     except requests.exceptions.Timeout:
-        return jsonify({
-            "success": False,
-            "error": "External API took long to respond"
-        }), 504
+        result = {
+                    "success": False,
+                    "error": "External API took long to respond",
+                    "status": 504
+                }
+        return render_template(
+            "forms.html",
+            result = json.dumps(result, indent=4)
+        )
 
 
     
