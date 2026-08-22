@@ -1,5 +1,7 @@
 # Pokémon Explorer
 
+![Pokémon Explorer](application/static/pokemon_main.png)
+
 Pokémon Explorer is a Flask-based web application that allows users to search for Pokémon and view information fetched from a Pokémon REST API.
 
 This project was built to practice and demonstrate **Python, Flask, REST API consumption, HTTP requests, query parameters, input validation, error handling, HTML templates, and deployment**.
