@@ -100,11 +100,17 @@
             <h3>What does this API do?</h3>
 
             <p>
-                This API acts as a bridge between the user and the Pokemon data.
-                When a user searches for a Pokemon, the application sends the
-                required information to the API and processes the response.
-                The retrieved data is then displayed in a simple and readable
-                format on the website.
+                Pokemon Explorer communicates with the
+                <strong>PokéAPI REST API</strong> to retrieve Pokemon data.
+                When a user searches for a Pokemon, the Flask application sends
+                an HTTP request to the API, receives the response in JSON format,
+                processes the required data, and displays it in a simple and
+                readable format.
+            </p>
+
+            <p>
+                You can also visit the <strong>API Explorer</strong> page to view
+                the API endpoint and the raw JSON response returned by PokéAPI.
             </p>
 
 
@@ -158,6 +164,19 @@
             <div class="explore-button-container">
                 <a href="/character" class="explore-button">
                     Explore Pokemon
+                </a>
+            </div>
+
+            <h3>Explore the Raw API</h3>
+
+            <p>
+                Want to see the API data directly? Visit the API Explorer page
+                to view the original JSON response returned by the Pokemon API.
+            </p>
+
+            <div class="explore-button-container">
+                <a href="/rawapi" class="explore-button">
+                    View API Response
                 </a>
             </div>
         
