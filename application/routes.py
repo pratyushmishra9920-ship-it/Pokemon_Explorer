@@ -81,8 +81,8 @@ def info():
                         "Type": found_type,
                         "Ability": found_ability,
                         "Move": found_move,
-                        "Stats Name": found_stat_name,
-                        "Base Stat": found_base
+                        "Stats": found_stat_name,
+                        "Base Stats": found_base
                     }
                 }
         return render_template(
