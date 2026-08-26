@@ -68,7 +68,9 @@ def info():
     for key in data["stats"]: 
         found_base.append(key["base_stat"])
         found_stat_name.append(key["stat"]["name"])
-
+        
+    found_img_url = data["sprites"]["front_default"]
+    
     if found_name and found_type and found_ability and found_move:
         result = {
                 "success": True,
@@ -82,7 +84,8 @@ def info():
                         "Ability": found_ability,
                         "Move": found_move,
                         "Stats": found_stat_name,
-                        "Base Stats": found_base
+                        "Base Stats": found_base,
+                        "Pokemon Image": found_img_url
                     }
                 }
         return render_template(
